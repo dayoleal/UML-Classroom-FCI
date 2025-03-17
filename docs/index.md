@@ -27,9 +27,9 @@
 
 # Autores
 
-* Ana 
-* Dayô
-* Enzo
+* Ana Clara
+* Dayô Araujo
+* Enzo Viana
 
 
 
