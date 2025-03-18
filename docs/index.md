@@ -12,7 +12,6 @@
 
 **Conteúdo**
 
-- [Diagrama de Atividades](#diagrama-de-atividades) 
 - [Diagrama de Casos de Uso](#diagrama-de-comportamento-atores)
 - [Descrição dos Casos de Uso](#descrição-das-funcões)
 - [Diagrama de Senquencia](#diagrama-de-ordem-interações)
@@ -54,7 +53,24 @@ Para resolver esse problema, o Sr. Boticário decidiu modernizar a farmácia com
 
 # Diagrama de Atividades
 
-*&lt;Diagrama para visualizer as pessoas das áreas de negócios e de desenvolvimento de uma organização para entender o processo e comportamento.&gt;*
+diagramaAtividade
+    start
+    :Cliente chega à farmácia;
+    :Atendente pesquisa produto no sistema;
+    decision "Produto disponível?" 
+    yes --> :Registrar venda;
+    :Associar venda ao CPF do cliente;
+    :Atualizar estoque automaticamente;
+    :Gerar cupom fiscal;
+    :Cliente realiza pagamento;
+    :Entregar produto ao cliente;
+    no --> :Informar indisponibilidade;
+    stop
+
+    |||
+    :Administrador acessa o sistema;
+    :Gerar relatórios de vendas e estoque;
+    stop
 
 # Diagrama de Casos de Uso
 
