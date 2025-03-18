@@ -53,24 +53,24 @@ Para resolver esse problema, o Sr. Boticário decidiu modernizar a farmácia com
 
 # Diagrama de Atividades
 
-diagramaAtividade
-    start
-    :Cliente chega à farmácia;
-    :Atendente pesquisa produto no sistema;
-    decision "Produto disponível?" 
-    yes --> :Registrar venda;
-    :Associar venda ao CPF do cliente;
-    :Atualizar estoque automaticamente;
-    :Gerar cupom fiscal;
-    :Cliente realiza pagamento;
-    :Entregar produto ao cliente;
-    no --> :Informar indisponibilidade;
-    stop
+graph TD
+    A(Início) -->|Cliente chega à farmácia| B[Atendente pesquisa produto no sistema]
+    B --> C{Produto disponível?}
+    C -->|Sim| D[Registrar venda]
+    D --> E[Associar venda ao CPF do cliente]
+    E --> F[Atualizar estoque automaticamente]
+    F --> G[Gerar cupom fiscal]
+    G --> H[Cliente realiza pagamento]
+    H --> I[Entregar produto ao cliente]
+    I --> J[Fim]
 
-    |||
-    :Administrador acessa o sistema;
-    :Gerar relatórios de vendas e estoque;
-    stop
+    C -->|Não| K[Informar indisponibilidade]
+    K --> J
+
+    subgraph Gestão Administrativa
+        L[Administrador acessa o sistema] --> M[Gerar relatórios de vendas e estoque]
+    end
+
 
 # Diagrama de Casos de Uso
 
